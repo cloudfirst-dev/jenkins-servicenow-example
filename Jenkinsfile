@@ -1,6 +1,6 @@
 node('nodejs') {
   stage 'build'
-  openshiftBuild(buildConfig: 'servicenow-ex', showBuildLogs: 'true')
+  openshiftBuild(buildConfig: 'servicenow-example', showBuildLogs: 'true')
   stage 'deploy'
-  openshiftDeploy(deploymentConfig: 'servicenow-ex')
+  openshiftDeploy(deploymentConfig: 'servicenow-example')
 }
