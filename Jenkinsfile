@@ -12,8 +12,8 @@ node('nodejs') {
   println "change number ${changeNumber} created"
 
   // get current state of change
-  def response = serviceNow_UpdateChangeItem serviceNowConfiguration: [instance: 'dev59729'], credentialsId: 'servicenow', serviceNowItem: [sysId: sysId]
-  echo response 
+  def statResponse = serviceNow_UpdateChangeItem serviceNowConfiguration: [instance: 'dev59729'], credentialsId: 'servicenow', serviceNowItem: [sysId: sysId]
+  echo statResponse 
 
   stage 'deploy'
   openshiftDeploy(deploymentConfig: 'servicenow-example')
